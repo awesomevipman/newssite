@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home Page</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <img src="images/hongkongpost.png" alt="Website Logo" class="logo">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Hong Kong Post (ROBLOX)">
+  <meta property="og:description" content="News website for the Hong Kong Post (ROBLOX)">
+  <meta property="og:image" content="images\hongkongpost.png">
+
+</head>
+
+<body>
+  <div class="filter-bar">
+    <input type="text" id="filter-input" placeholder="Search..." oninput="applyFilter()">
+    <select id="filter-category" onchange="applyFilter()">
+      <option value="all">All</option>
+      <option value="category1">Articles</option>
+      <option value="category2">Category 2</option>
+      <option value="category3">Category 3</option>
+    </select>
+  </div>
+
+  <span class="filter-bar-message"><b>No results found - please refine your search!</b></span>
+
+
+  <div id="content">
+    <p data-category="category1"><a href="news/mainnews.html">Main News Articles</a></p>
+    <!-- <p data-category="category1">N/A</p>
+    <p data-category="category4">Content 3 - Category N/A</p>
+    <p data-category="category4">Content 4 - Category N/A</p>
+    <p data-category="category4">Content 5 - Category N/A</p>
+    <p data-category="category4">Content 6 - Category N/A</p> -->
+  </div>
+
+
+  <script>
+    function applyFilter() {
+      let input = document.getElementById('filter-input').value.toLowerCase();
+      let category = document.getElementById('filter-category').value;
+      let content = document.getElementById('content').getElementsByTagName('p');
+      let contentSection = document.getElementById('content');
+      let noResults = document.getElementsByClassName('filter-bar-message')[0];
+      let matchFound = false;
+
+      for (let i = 0; i < content.length; i++) {
+        let text = content[i].textContent.toLowerCase();
+        let dataCategory = content[i].getAttribute('data-category');
+        let categoryMatch = (category === 'all' || dataCategory === category);
+        let inputMatch = (text.indexOf(input) !== -1);
+
+        if (categoryMatch && inputMatch) {
+          content[i].style.display = 'block';
+          matchFound = true;
+        } else {
+          content[i].style.display = 'none';
+        }
+      }
+
+      if (matchFound) {
+        noResults.style.display = 'none';
+        contentSection.style.display = 'block';
+      } else {
+        noResults.style.display = 'block';
+        contentSection.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Lunasima&display=swap');
+
+  body {
+    font-family: 'Lunasima', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #E6262E;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav {
+    background-color: #f4f4f4;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+  }
+  
+  main {
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  
+  footer {
+    background-color: #E6262E;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .centre {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;  /* This adjusts the entire alignment for the page minus the H2/H3 headings */
+  }
+
+  
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+img {
+  display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.imgtext {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+h3 {text-align: center;
+}
+
+.paragraphText{
+  display: inline-block;
+text-align: justify;
+width: fit-content;
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+  padding: 5px;
+}
